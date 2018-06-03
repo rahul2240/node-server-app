@@ -10,7 +10,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req,res) => {
-  res.render('about');
+  res.render('about', {
+    title: 'About Page',
+    heading: 'Welcome to about page'
+  });
 });
 
 app.listen(3000, () => {
