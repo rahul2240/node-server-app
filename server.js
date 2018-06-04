@@ -6,7 +6,10 @@ const app = express();
 app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
-  res.send('hello');
+  res.render('home', {
+    title: 'home page',
+    date: new Date().currentyear
+  });
 });
 
 app.get('/about', (req,res) => {
