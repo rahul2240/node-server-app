@@ -3,12 +3,17 @@ const hbs = require('hbs');
 
 const app = express();
 
+
+hbs.registerPartials(__dirname + '/views/partials');
+hbs.registerHelper('year', () => {
+  return new Date().getFullYear()
+} );
 app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
   res.render('home', {
     title: 'home page',
-    date: new Date().currentyear
+
   });
 });
 
